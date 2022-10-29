@@ -52,7 +52,7 @@ export default (params) => {
 						type='text'
 						maxLength={30}
 						value={newName()}
-						placeholder='Edit Name'
+						placeholder='Edit Serie Name'
 						onInput={e => setNewName(e.currentTarget.value)}>
 					</input>
 					<button class='right-button' onClick={() => closeEdit()}>

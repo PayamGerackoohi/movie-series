@@ -9,8 +9,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "node local-index.js",
-    "test": "node test.js",
-    "front-build": "./fbuild"
+    "test": "node test.js"
   },
   "dependencies": {
     "express": "^4.15.2"

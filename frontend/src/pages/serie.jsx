@@ -15,7 +15,7 @@ export default () => {
 	const [seasons, setSeasons] = createStore(series[serieIndex].seasons)
 	const activeSeason = seasons.findIndex(e => e.some(it => !it))
 	const [expand, setExpand] = createStore(seasons.map((_, i) => activeSeason === i))
-	const [addCount, setAddCount] = createLocalSignal('AddCount', 1)
+	const [addCount, setAddCount] = createLocalSignal('AddCount', '1')
 	const addSeason = () => batch(() => {
 		setSeasons(s => [...s, []])
 		setExpand(e => [...e, true])
@@ -40,11 +40,9 @@ export default () => {
 	createEffect(() => batch(() => {
 		setSeries(serieIndex, { name: params.serie, seasons: seasons })
 	}))
-	function addCountChanged(e) {
-		const num = e.currentTarget.valueAsNumber
-		setAddCount(num)
-		if (!num || num <= 1)
-			setAddCount(1)
+	function addToAddCount(value) {
+		const num = +addCount() + value
+		setAddCount(num <= 1 ? 1 : num)
 	}
 	const onBackPressed = () => navigate('/')
 	const onTitleClicked = index => setExpand(index, e => !e)
@@ -55,12 +53,12 @@ export default () => {
 		</div>
 		<div id='header1' class='spread'>
 			<div class='button-stack'>
-				<button class='left-button' onClick={addSeason}>
-					<img class='center-image' src='/add.svg'></img>
+				<button class='left-button' onClick={removeSeason}>
+					<img class='center-image' src='/remove.svg'></img>
 				</button>
 				<div class='middle-button solid-button'>Season</div>
-				<button class='right-button' onClick={removeSeason}>
-					<img class='center-image' src='/remove.svg'></img>
+				<button class='right-button' onClick={addSeason}>
+					<img class='center-image' src='/add.svg'></img>
 				</button>
 			</div>
 			<button id='back-button' class='circle-button' onClick={onBackPressed}>
@@ -69,7 +67,15 @@ export default () => {
 		</div>
 		<div id='header2' class='right-side'>
 			<span>±</span>
-			<input id='-add-count' type='number' value={addCount()} onInput={addCountChanged} />
+			<div id='add-count' class='button-stack'>
+				<button class='left-button' onClick={() => addToAddCount(-1)}>
+					<img class='center-image' src='/remove.svg'></img>
+				</button>
+				<div class='middle-button solid-button'>{addCount()}</div>
+				<button class='right-button' onClick={() => addToAddCount(1)}>
+					<img class='center-image' src='/add.svg'></img>
+				</button>
+			</div>
 			<span>episode{addCount() == 1 ? '' : 's'}</span>
 		</div>
 		<For each={seasons}>{(season, index) =>
@@ -81,11 +87,11 @@ export default () => {
 					>
 						Season {index() + 1}
 					</button>
-					<button class='rect-button' onClick={() => addEpisodes(index())}>
-						<img class='center-image' src='/add.svg'></img>
-					</button>
-					<button class='right-button' onClick={() => removeEpisodes(index())}>
+					<button class='rect-button' onClick={() => removeEpisodes(index())}>
 						<img class='center-image' src='/remove.svg'></img>
+					</button>
+					<button class='right-button' onClick={() => addEpisodes(index())}>
+						<img class='center-image' src='/add.svg'></img>
 					</button>
 				</div>
 				<details open={expand[index()]}>

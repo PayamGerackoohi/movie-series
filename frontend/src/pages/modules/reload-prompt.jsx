@@ -2,8 +2,7 @@
 import { Show } from 'solid-js'
 import { useRegisterSW } from 'virtual:pwa-register/solid'
 import { pwaInfo } from 'virtual:pwa-info'
-// import styles from './ReloadPrompt.sass'
-import './ReloadPrompt.sass'
+import './reload-prompt.sass'
 
 // eslint-disable-next-line no-console
 console.log(pwaInfo)
@@ -44,13 +43,10 @@ export default () => {
 	}
 
 	return (
-		// <div class={styles.Container}>
-		<div class='Container'>
+		<div class='container'>
 			<Show when={offlineReady() || needRefresh()}>
-				{/* <div class={styles.Toast}> */}
-				<div class='Toast'>
-					{/* <div class={styles.Message}> */}
-					<div class='Message'>
+				<div class='toast'>
+					<div class='message'>
 						<Show
 							fallback={<span>New content available, click on reload button to update.</span>}
 							when={offlineReady()}
@@ -58,10 +54,12 @@ export default () => {
 							<span>App ready to work offline</span>
 						</Show>
 					</div>
-					<Show when={needRefresh()}>
-						<button class='ToastButton' onClick={() => updateServiceWorker(true)}>Reload</button>
-					</Show>
-					<button class='ToastButton' onClick={() => close()}>Close</button>
+					<div class='button-holder'>
+						{/* <Show when={needRefresh()}> */}
+						<button class='toast-button' onClick={() => updateServiceWorker(true)}>Reload</button>
+						{/* </Show> */}
+						<button class='toast-button' onClick={close}>Close</button>
+					</div>
 				</div>
 			</Show>
 		</div>

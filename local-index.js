@@ -6,5 +6,5 @@ const HOST = 'localhost'
 express()
 	.use(express.static(path.join(__dirname, 'public')))
 	//.use(express.static(path.join(__dirname, 'frontend/dist')))
-	.get('/', (_, res) => res.redirect('index.html'))
+	//.get('/', (_, res) => res.redirect('index.html'))
 	.listen(PORT, HOST, () => console.log(`Listening on ${HOST}:${PORT}`))

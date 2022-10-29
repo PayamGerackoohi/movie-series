@@ -81,35 +81,35 @@ define(['./workbox-d2a14864'], (function (workbox) { 'use strict';
    * See https://goo.gl/S9QRab
    */
   workbox.precacheAndRoute([{
-    "url": "assets/general.31ed4cce.css",
+    "url": "assets/general.02473991.js",
     "revision": null
   }, {
-    "url": "assets/general.3f564f83.js",
+    "url": "assets/general.1972d2ec.css",
     "revision": null
   }, {
     "url": "assets/home.13dc55ca.css",
     "revision": null
   }, {
-    "url": "assets/home.4acc818d.js",
+    "url": "assets/home.7f61c504.js",
     "revision": null
   }, {
-    "url": "assets/index.194b47ea.js",
+    "url": "assets/index.129623fe.js",
     "revision": null
   }, {
-    "url": "assets/index.5fd4d55f.css",
+    "url": "assets/index.c00921f5.css",
     "revision": null
   }, {
-    "url": "assets/serie.23dcd930.css",
+    "url": "assets/serie.44fa864c.css",
     "revision": null
   }, {
-    "url": "assets/serie.a81ed432.js",
+    "url": "assets/serie.8d12c39b.js",
     "revision": null
   }, {
     "url": "assets/workbox-window.prod.es5.6954f450.js",
     "revision": null
   }, {
     "url": "index.html",
-    "revision": "83fe79076b0d1dbc1a8b16b0772c5cb9"
+    "revision": "6712c0d9a2becd2db2fb2b328d54abcb"
   }, {
     "url": "favicon.ico",
     "revision": "d4988481193e0948badeaf2fae241220"
