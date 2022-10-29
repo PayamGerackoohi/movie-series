@@ -81,50 +81,12 @@ define(['./workbox-d2a14864'], (function (workbox) { 'use strict';
    * See https://goo.gl/S9QRab
    */
   workbox.precacheAndRoute([{
-    "url": "assets/general.31ed4cce.css",
-    "revision": null
-  }, {
-    "url": "assets/general.78cd02fa.js",
-    "revision": null
-  }, {
-    "url": "assets/home.13dc55ca.css",
-    "revision": null
-  }, {
-    "url": "assets/home.653d15b6.js",
-    "revision": null
-  }, {
-    "url": "assets/index.1367974f.js",
-    "revision": null
-  }, {
-    "url": "assets/index.5fd4d55f.css",
-    "revision": null
-  }, {
-    "url": "assets/serie.23dcd930.css",
-    "revision": null
-  }, {
-    "url": "assets/serie.2b21312e.js",
-    "revision": null
-  }, {
-    "url": "assets/workbox-window.prod.es5.6954f450.js",
-    "revision": null
-  }, {
-    "url": "index.html",
-    "revision": "b34903c513d7fd73220bd0b51e7d9f54"
-  }, {
-    "url": "favicon.ico",
-    "revision": "d4988481193e0948badeaf2fae241220"
-  }, {
-    "url": "ms-192x192.png",
-    "revision": "c731112e8812b7cb4c05066a144e1dfc"
-  }, {
-    "url": "ms-512x512.png",
-    "revision": "5d531fed724b87ce5f77f1111a01eb25"
-  }, {
-    "url": "manifest.webmanifest",
-    "revision": "4db47d2442bc427d66611cd189c3d52f"
+    "revision": null,
+    "url": "index.html"
   }], {});
   workbox.cleanupOutdatedCaches();
-  workbox.registerRoute(new workbox.NavigationRoute(workbox.createHandlerBoundToURL("index.html")));
+  workbox.registerRoute(new workbox.NavigationRoute(workbox.createHandlerBoundToURL("index.html"), {
+    allowlist: [/^\/$/]
+  }));
 
 }));
-//# sourceMappingURL=sw.js.map

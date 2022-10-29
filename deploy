@@ -1,0 +1,15 @@
+# Sample
+# ./deploy 'commit message'
+
+if [ "$1" == "" ]; then
+ echo "Error: missing commit message!"
+ exit 1
+fi
+
+git add .
+git commit -m "$1"
+
+git push heroku main
+heroku ps:scale web=1
+heroku open
+
