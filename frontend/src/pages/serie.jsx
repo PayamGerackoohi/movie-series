@@ -56,15 +56,15 @@ export default () => {
 		<div id='header1' class='spread'>
 			<div class='button-stack'>
 				<button class='left-button' onClick={addSeason}>
-					<img class='center-image' src='add.svg'></img>
+					<img class='center-image' src='/add.svg'></img>
 				</button>
 				<div class='middle-button solid-button'>Season</div>
 				<button class='right-button' onClick={removeSeason}>
-					<img class='center-image' src='remove.svg'></img>
+					<img class='center-image' src='/remove.svg'></img>
 				</button>
 			</div>
 			<button id='back-button' class='circle-button' onClick={onBackPressed}>
-				<img src='left-arrow.svg' class='center-image'></img>
+				<img src='/left-arrow.svg' class='center-image'></img>
 			</button>
 		</div>
 		<div id='header2' class='right-side'>
@@ -82,10 +82,10 @@ export default () => {
 						Season {index() + 1}
 					</button>
 					<button class='rect-button' onClick={() => addEpisodes(index())}>
-						<img class='center-image' src='add.svg'></img>
+						<img class='center-image' src='/add.svg'></img>
 					</button>
 					<button class='right-button' onClick={() => removeEpisodes(index())}>
-						<img class='center-image' src='remove.svg'></img>
+						<img class='center-image' src='/remove.svg'></img>
 					</button>
 				</div>
 				<details open={expand[index()]}>

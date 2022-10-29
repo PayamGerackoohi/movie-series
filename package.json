@@ -8,8 +8,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "dev": "node local-index.js",
     "test": "node test.js",
-    "front-build": "cd frontend && pnpm run build"
+    "front-build": "./fbuild"
   },
   "dependencies": {
     "express": "^4.15.2"

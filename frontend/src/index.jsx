@@ -23,7 +23,7 @@ render(() =>
 	<Router>
 		<Routes>
 			<Route path='/' component={Home} />
-			<Route path='/:serie' component={Serie} />
+			<Route path='serie/:serie' component={Serie} />
 		</Routes>
 		<ReloadPrompt />
 	</Router>,

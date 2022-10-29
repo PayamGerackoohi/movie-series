@@ -27,7 +27,7 @@ export default () => {
 			invalidSerieNameError()
 	}
 	const isSerieSaved = name => series.map(it => it.name).includes(name)
-	const goToSerie = serie => navigate('/' + serie)
+	const goToSerie = serie => navigate('serie/' + serie)
 	const removeSerie = index => setSeries(removeFromStore(series, index))
 	const renameSerie = (name, index) => setSeries(index, 'name', name)
 	return <div class='Home'>
@@ -41,7 +41,7 @@ export default () => {
 				onInput={e => setName(e.currentTarget.value)}>
 			</input>
 			<button class='right-button' onClick={addSerie}>
-				<img class='center-image' src='add.svg'></img>
+				<img class='center-image' src='/add.svg'></img>
 			</button>
 		</div>
 		<For each={series}>{(serie, index) =>

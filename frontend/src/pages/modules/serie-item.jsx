@@ -38,11 +38,11 @@ export default (params) => {
 		<div class='serie-item flex-stack'>
 			<div class='button-stack'>
 				<button class='left-button' onClick={() => params.removeSerie(params.index())}>
-					<img class='center-image' src='remove.svg'></img>
+					<img class='center-image' src='/remove.svg'></img>
 				</button>
 				<button id='serie-name' class='middle-button' onClick={() => params.goToSerie(name())}>{name()}</button>
 				<button class={`${edit() ? 'rect-button' : 'right-button'}`} onClick={() => onEdit()}>
-					<img class='center-image' src={edit() ? 'check.svg' : 'edit.svg'}></img>
+					<img class='center-image' src={edit() ? '/check.svg' : '/edit.svg'}></img>
 				</button>
 			</div>
 			<div class='button-stack'>
@@ -56,7 +56,7 @@ export default (params) => {
 						onInput={e => setNewName(e.currentTarget.value)}>
 					</input>
 					<button class='right-button' onClick={() => closeEdit()}>
-						<img class='center-image' src='close.svg'></img>
+						<img class='center-image' src='/close.svg'></img>
 					</button>
 				</Show>
 			</div>
