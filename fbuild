@@ -1,5 +1,5 @@
-#rm -rf public
+rm -rf public
 pushd frontend
 pnpm run build
-#mv dist ../public
+mv dist ../public
 popd
