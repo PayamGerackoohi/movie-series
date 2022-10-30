@@ -26,11 +26,11 @@ body
 @mixin btn($reverse: false)
 	min-height: $button-size
 	min-width: $button-size
+	margin: 0
 	color: white
 	border-color: gray
 	border-width: 2px
 	box-sizing: border-box
-	margin: 0
 	@if $reverse
 		background-image: linear-gradient($button2, $button1)
 	@else
