@@ -13,7 +13,7 @@ const Serie = lazy(() => import('./pages/serie'))
 if (!localStorage.AppName) {
 	localStorage.clear()
 	localStorage.AppName = 'Movie Series'
-	console.log('localStorage is cleaned.')
+	// console.log('localStorage is cleaned.')
 }
 
 render(() =>
