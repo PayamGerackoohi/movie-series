@@ -1,14 +1,14 @@
 {
-  "name": "node-js-getting-started",
-  "version": "0.3.0",
-  "description": "A sample Node.js app using Express 4",
+  "name": "movie-series",
+  "version": "1.0.0",
+  "description": "A thin ExpressJS layer to run SolidJS",
   "engines": {
     "node": "16.x"
   },
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "node local-index.js",
+    "dev": "DEV=1 node index.js",
     "test": "node test.js"
   },
   "dependencies": {
@@ -20,12 +20,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heroku/node-js-getting-started"
+    "url": "https://github.com/PayamGerackoohi/movie-series"
   },
   "keywords": [
     "node",
     "heroku",
-    "express"
+    "express",
+    "pwa",
+    "solid"
   ],
   "license": "MIT"
 }

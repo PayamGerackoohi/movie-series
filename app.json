@@ -1,8 +1,8 @@
 {
-  "name": "Start on Heroku: Node.js",
-  "description": "A barebones Node.js app using Express 4",
-  "repository": "https://github.com/heroku/node-js-getting-started",
+  "name": "Movie Series",
+  "description": "A thin ExpressJS layer to run SolidJS",
+  "repository": "https://github.com/PayamGerackoohi/movie-series",
   "logo": "https://cdn.rawgit.com/heroku/node-js-getting-started/main/public/node.svg",
-  "keywords": ["node", "express", "heroku"],
+  "keywords": ["node", "express", "heroku", "pwa", "solid"],
   "image": "heroku/nodejs"
 }

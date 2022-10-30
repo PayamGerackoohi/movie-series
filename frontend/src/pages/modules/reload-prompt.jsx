@@ -55,9 +55,9 @@ export default () => {
 						</Show>
 					</div>
 					<div class='button-holder'>
-						{/* <Show when={needRefresh()}> */}
-						<button class='toast-button' onClick={() => updateServiceWorker(true)}>Reload</button>
-						{/* </Show> */}
+						<Show when={needRefresh()}>
+							<button class='toast-button' onClick={() => updateServiceWorker(true)}>Reload</button>
+						</Show>
 						<button class='toast-button' onClick={close}>Close</button>
 					</div>
 				</div>
